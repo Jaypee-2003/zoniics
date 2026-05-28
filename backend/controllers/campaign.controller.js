@@ -5,13 +5,13 @@ const { Readable } = require('stream');
 
 const Campaign = require('../models/Campaign');
 const Lead     = require('../models/Lead');
-const auth     = require('../middleware/auth.middleware');
+const { requireTenantAdmin } = require('../middleware/auth.middleware');
 const { enqueueDialerJob } = require('../services/dialerQueue.service');
 
 const router = express.Router();
 
 // All campaign routes require a valid JWT
-router.use(auth);
+router.use(requireTenantAdmin);
 
 const upload = multer({
   storage: multer.memoryStorage(),

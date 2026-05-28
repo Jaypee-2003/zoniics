@@ -24,19 +24,19 @@ function StatCard({ icon: Icon, label, value, gradient }) {
 
 const QUICK_LINKS = [
   {
-    to: '/dashboard/config',
-    icon: Settings,
-    label: 'AI Configuration',
-    desc: 'Update your WhatsApp integration and system prompt',
+    to: '/dashboard/voice',
+    icon: Phone,
+    label: 'Voice Calls',
+    desc: 'View call history and configure your AI voice agent',
     iconBg: 'bg-z-blue/10',
     iconColor: 'text-z-blue',
     border: 'hover:border-z-blue/40',
   },
   {
-    to: '/dashboard/logs',
+    to: '/dashboard/whatsapp',
     icon: MessageSquare,
-    label: 'Chat Logs',
-    desc: 'Browse all customer interactions by channel',
+    label: 'WhatsApp',
+    desc: 'Manage conversations, templates, and auto-rules',
     iconBg: 'bg-emerald-50',
     iconColor: 'text-emerald-600',
     border: 'hover:border-emerald-300',
@@ -44,8 +44,8 @@ const QUICK_LINKS = [
   {
     to: '/dashboard/campaigns',
     icon: Radio,
-    label: 'Campaigns',
-    desc: 'Launch outbound AI cold-calling campaigns',
+    label: 'Outreach Campaigns',
+    desc: 'Upload CSV leads and let AI call each contact automatically',
     iconBg: 'bg-z-purple/10',
     iconColor: 'text-z-purple',
     border: 'hover:border-z-purple/40',

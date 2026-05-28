@@ -117,9 +117,10 @@ function CreateModal({ onCreated, onClose }) {
               placeholder="Optional notes" className={inputCls} />
           </div>
           <div>
-            <label className="text-xs font-semibold text-z-muted uppercase tracking-widest mb-1.5 block">Vapi Phone Number ID *</label>
+            <label className="text-xs font-semibold text-z-muted uppercase tracking-widest mb-1.5 block">Caller Phone Number ID *</label>
             <input value={form.vapiPhoneNumberId} onChange={e => set('vapiPhoneNumberId', e.target.value)}
-              placeholder="Get this from your Vapi dashboard" className={inputCls} required />
+              placeholder="Your outbound phone number ID from Vapi" className={inputCls} required />
+            <p className="text-xs text-z-muted mt-1">Found in your Vapi dashboard under Phone Numbers</p>
           </div>
           <div>
             <label className="text-xs font-semibold text-z-muted uppercase tracking-widest mb-1.5 block">
@@ -152,7 +153,7 @@ function CreateModal({ onCreated, onClose }) {
   );
 }
 
-export default function CampaignPage() {
+export default function OutreachPage() {
   const navigate = useNavigate();
 
   const [campaigns, setCampaigns]   = useState([]);
@@ -202,8 +203,8 @@ export default function CampaignPage() {
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-3 mb-6 sm:mb-8">
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold text-z-text">Campaigns</h1>
-          <p className="text-z-muted text-sm mt-0.5">Outbound AI cold calling — upload leads and launch</p>
+          <h1 className="text-xl sm:text-2xl font-bold text-z-text">Outreach Campaigns</h1>
+          <p className="text-z-muted text-sm mt-0.5">AI cold calling — upload a CSV of leads and your agent calls each one automatically</p>
         </div>
         <button
           onClick={() => setShowCreate(true)}
@@ -230,7 +231,8 @@ export default function CampaignPage() {
           <div className="w-16 h-16 rounded-2xl bg-z-surface border border-z-border flex items-center justify-center">
             <BarChart2 size={28} className="opacity-30" />
           </div>
-          <p>No campaigns yet. Create one to get started.</p>
+          <p className="font-medium text-z-text text-sm">No campaigns yet</p>
+          <p className="text-xs text-center max-w-64 leading-relaxed">Create a campaign, upload a CSV of leads, and your AI agent will call each contact automatically.</p>
           <button onClick={() => setShowCreate(true)}
             className="flex items-center gap-2 px-4 py-2 bg-brand-gradient text-white text-sm font-semibold rounded-lg hover:opacity-90">
             <Plus size={14} /> New Campaign
